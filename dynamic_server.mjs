@@ -27,8 +27,9 @@ const db = new sqlite3.Database(path.join(__dirname, 'powerplant.sqlite3'), sqli
         dbSelect('SELECT * FROM country').then((rows) => {
             countryArray = rows;
             for (var i = 0; i < countryArray.length; i++) {
-                countryCodeArray[i] = countryArray[i].country_code;
+                countryCodeArray.push(countryArray[i].country_code);
               }
+              console.log(countryCodeArray);
         });
     }
 });
