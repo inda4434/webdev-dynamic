@@ -34,7 +34,7 @@ const db = new sqlite3.Database(path.join(__dirname, 'powerplant.sqlite3'), sqli
 });
 
 //route for displaying by primary fuel source
-app.get('/:source', (req, res) => {
+app.get('/power/:source', (req, res) => {
     let source_lowerCase = req.params.source.toString().toLowerCase();
     if (fuelSourceArray.indexOf(source_lowerCase) != -1){
         let primary_fuel_lower = source_lowerCase;
@@ -160,7 +160,7 @@ app.get('/:source', (req, res) => {
     }
 });
 
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
     let headerReplacement = "Displaying All Power Plants";
     let filePath = path.join(templates,'fuel.html');
     let p1 = dbSelect('SELECT * FROM info');
