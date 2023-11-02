@@ -7,7 +7,7 @@ import { default as sqlite3 } from 'sqlite3';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 const root = path.join(__dirname, 'public');
 const templates = path.join(__dirname, 'templates');
 
@@ -254,7 +254,7 @@ function dbSelect(query, params) {
     return p;
 }
 
-app.listen(port, () => {
+app.listen(port,'0.0.0.0', () => {
     console.log('Now listening on port ' + port);
 });
 
