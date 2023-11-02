@@ -70,18 +70,18 @@ app.get('/:source', (req, res) => {
         const origin="capacity";
         if (size == 'capacitylow'){
             p1 = dbSelect('SELECT * FROM info WHERE capacity_mw <200');
-            nextLink = 'https://powerplant.onrender.com/medium';
-            previousLink = 'https://powerplant.onrender.com/high';
+            nextLink = 'capacitymedium';
+            previousLink = 'capacityhigh';
             size = 'low';
         } else if (size == 'capacitymedium'){
             p1 = dbSelect('SELECT * FROM info WHERE capacity_mw >=200 and capacity_mw <=600');
-            nextLink = 'https://powerplant.onrender.com/high';
-            previousLink = 'https://powerplant.onrender.com/low';
+            nextLink = 'capacityhigh';
+            previousLink = 'capacitylow';
             size = 'medium';
         } else if (size == 'capacityhigh'){
             p1 = dbSelect('SELECT * FROM info WHERE capacity_mw >600');
-            nextLink = 'https://powerplant.onrender.com/low';
-            previousLink = 'https://powerplant.onrender.com/medium';
+            nextLink = 'capacitylow';
+            previousLink = 'capacitymedium';
             size = 'high';
         } else {
             res.status(404).type('txt').send('404 page not found. Capacity "' + size +'" invalid.');
@@ -167,7 +167,7 @@ app.get('/', (req, res) => {
     let p2 = fs.promises.readFile(filePath, 'utf-8');
     Promise.all([p1,p2]).then((results) => {
         const graph = displayGraph('estimated', results[0]);
-        let response = displayTable(results, headerReplacement, 'https://powerplant.onrender.com/', 'https://powerplant.onrender.com/', graph);
+        let response = displayTable(results, headerReplacement, 'https://www.powerplants.onrender.com/', 'https://www.powerplants.onrender.com/', graph);
         res.status(200).type('html').send(response);
     }).catch((error) => {
         console.log(error);
@@ -182,7 +182,7 @@ function countryDropdown(){
     for (var i = 0; i < countryArray.length; i++) {
         let countryName = countryArray[i].country_name;
         let countryCode = countryArray[i].country_code;
-        countries += '<a href="https://powerplant.onrender.com/' + countryCode + '">'+ countryName +'</a>';
+        countries += '<a href="/' + countryCode + '">'+ countryName +'</a>';
     }
     return countries;
 }
