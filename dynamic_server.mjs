@@ -7,7 +7,7 @@ import { default as sqlite3 } from 'sqlite3';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
-const port = 8005;
+const port = 8000;
 const root = path.join(__dirname, 'public');
 const templates = path.join(__dirname, 'templates');
 
@@ -34,7 +34,7 @@ const db = new sqlite3.Database(path.join(__dirname, 'powerplant.sqlite3'), sqli
 });
 
 //route for displaying by primary fuel source
-app.get('/power/:source', (req, res) => {
+app.get('/:source', (req, res) => {
     let source_lowerCase = req.params.source.toString().toLowerCase();
     if (fuelSourceArray.indexOf(source_lowerCase) != -1){
         let primary_fuel_lower = source_lowerCase;
