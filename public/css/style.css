@@ -1,111 +1,23 @@
-/*
-body {
-    background-image: url("here.avif");
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgba(0,0,0,0.8);
-    
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: rgb(243, 240, 240);
 }
 
-.header-container {
-    position: relative;
-    text-align: center; 
+body{
+    background-color: rgb(243, 240, 240);
 }
 
-
-.myheadercss {
-    color: white;
-    position:relative;
-}
-
-
-.headerpicture {
-width: 100%;
-}
-
-.myfootercss {
-    background-color: black;
-    height: 150px;
-}
-
-.mycontent {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
-    
-}
-
-.myhomepagelinkscss {
-    
-    text-align:center;
-    margin: 25px;
-}
-
-
-
-#myHLinksID {
-    background-color:grey;  
-    position: relative;
-    float:right;
-    text-decoration:none;
-}
-
-
-
-h2 {
-    position:absolute;
-    top:50%;
-    left: 40%;
-    text-align:center;
-    font: bold 2.5rem Arial,"Times New Roman", sans-serif;
-}
-
-.sm {
-    position: absolute;
-    bottom:0px;
-
-
-}
-
-.changeS {
-  
-    img :hover{
-        height: 130px;
-        border: 2px solid black;
-       
-    }
-
-}
-
-
-
-#myStoryContent:target {
-    display: block;
-}
-*/
-
-
-/* unvisited link */
-a:link {
-    color: blue;
-}
-
-/* visited link */
-a:visited {
-    color: rgb(181, 1, 241);
-}
-
-/* mouse over link */
-a:hover {
-    width: white;
-}
-
-/* selected link */
-a:active {
-    color: green;
+h1{
+    text-align: center;
+    font-size: 2rem;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
+    height: 100px;
+    overflow: auto;
 }
 
 .dropdown-content {
@@ -115,19 +27,77 @@ a:active {
     overflow: auto;
     box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
 }
-  
+
 .dropdown:hover .dropdown-content {
     display: block;
+    background-color: rgb(243, 240, 240);
 }
-  
+
 .dropdown-content a {
     display: block;
     color: #000000;
     padding: 5px;
     text-decoration: none;
 }
-  
+
 .dropdown-content a:hover {
     color: #FFFFFF;
-    background-color: #00A4BD;
+    background-color: #0454aa;
+}
+
+.floatLeft{
+    float: left;
+}
+
+#table {
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    max-width: 80%;
+}
+
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0454aa;
+    color: white;
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+button {
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: teal;
+    text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+    color: green;
 }
